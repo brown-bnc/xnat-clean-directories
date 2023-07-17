@@ -1,14 +1,7 @@
 name: Build and PushContainer
-on:
-  push:
-    branches:
-      - 'main'
-    tags:
-      - '*'
-  pull_request:  
-    branches:
-      - 'main'
 
+on: workflow_dispatch
+  
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: brown-bnc/xnat-clean-directories
