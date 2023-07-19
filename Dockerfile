@@ -7,4 +7,4 @@ FROM ubuntu:${UBUNTU_VERSION}
 #CMD  /usr/bin/find ${PARENT_PATH}/home/logs -name '*.log.*' -mtime +${DAYS_TO_CLEAN}  \ 
 #     && /usr/bin/find ${PARENT_PATH}/cache -mtime +${DAYS_TO_CLEAN}  \
 #     && /usr/bin/find ${PARENT_PATH}/build -mtime +${DAYS_TO_CLEAN} 
-CMD echo /usr/bin/find ${PARENT_PATH}/cache -mtime +${DAYS_TO_CLEAN}
+RUN echo /usr/bin/find ${PARENT_PATH}/cache -mtime +${DAYS_TO_CLEAN}
