@@ -1,8 +1,5 @@
 name: Build and PushContainer
-on: 
-  push:
-    tags:
-      - '*'
+on: push
 
 env:
   REGISTRY: ghcr.io
