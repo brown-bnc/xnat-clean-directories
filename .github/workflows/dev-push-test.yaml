@@ -1,8 +1,9 @@
 name: Build and PushContainer
 on:  
   push:
-    tags:
-      - '*'
+    branches-ignore:
+      - main
+
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: brown-bnc/xnat-clean-directories
