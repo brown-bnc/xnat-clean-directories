@@ -1,6 +1,10 @@
-FROM ubuntu:latest
 
-# Clean logs files older than 30 days
-CMD  /usr/bin/find /data/xnat/home/logs -name '*.log.*' -mtime +20 -delete \ 
-     && /usr/bin/find /data/xnat/cache -mtime +20 -delete \
-     && /usr/bin/find /data/xnat/build -mtime +20 -delete
+ARG UBUNTU_VERSION=22.04
+FROM ubuntu:$UBUNTU_VERSION
+ENV PARENT_PATH=/data/xnat
+ENV DAYS_TO_CLEAN=60
+
+# Clean logs files older than $DAYS_TO_CLEAN days
+CMD  /usr/bin/find $PARENT_PATH/home/logs -name '*.log.*' -mtime +$DAYS_TO_CLEAN -delete\ 
+     && /usr/bin/find $PARENT_PATH/cache -mtime +$DAYS_TO_CLEAN  -delete\
+     && /usr/bin/find $PARENT_PATH/build -mtime +$DAYS_TO_CLEAN -delete
