@@ -1,7 +1,7 @@
 #!/bin/bash
 
 counter=0
-while IFS= read -r line; do
+df -h /$PARENT_PATH | while IFS= read -r line; do
         ((counter++))
         if [ $counter -eq 2 ]; then
                 usage=$(echo "$line" | awk '{print $5}')
