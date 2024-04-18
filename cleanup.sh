@@ -6,7 +6,7 @@ df -h /$PARENT_PATH/cache | while IFS= read -r line; do
         if [ $counter -eq 2 ]; then
                 usage=$(echo "$line" | awk '{print $5}')
                 usage=${usage%\%}
-                if [ $usage -gt 75]; then
+                if [ $usage -gt 75 ]; then
                     DAYS_TO_CLEAN=$((DAYS_TO_CLEAN / usage))
                 fi
         fi
