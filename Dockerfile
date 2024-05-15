@@ -6,4 +6,10 @@ ENV DAYS_TO_CLEAN=100
 COPY cleanup.sh /cleanup.sh
 RUN chmod +x /cleanup.sh
 
-CMD ["/cleanup.sh"]
+RUN /usr/bin/find $PARENT_PATH/home/logs -mindepth 1 -type f -name '*.log.*' -mtime +$DAYS_TO_CLEAN -delete
+RUN /usr/bin/find $PARENT_PATH/prearchive -mindepth 1 -type f -mtime +$DAYS_TO_CLEAN -delete
+RUN /usr/bin/find $PARENT_PATH/archive -mindepth 1 -type f -mtime +$DAYS_TO_CLEAN -delete
+RUN /usr/bin/find $PARENT_PATH/build -mindepth 1 -type f -mtime +$DAYS_TO_CLEAN -delete
+RUN /usr/bin/find $PARENT_PATH/inbox -mindepth 1 -type f -mtime +$DAYS_TO_CLEAN -delete
+
+CMD ["/cleanup_cache.sh"]
