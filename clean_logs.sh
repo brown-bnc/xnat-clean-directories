@@ -12,8 +12,7 @@ for rel_path in "${DIRS_TO_CLEAN[@]}"; do
   full_path="$PARENT_PATH/${rel_path}"
   
   # DONT DELETE /data/xnat/archives
-  if [[ "$rel_path" == "archives" || \
-        "$full_path" == "/data/xnat/archive" || \
+  if [[ "$full_path" == "/data/xnat/archive" || \
         "$full_path" == "data/xnat/archive" ]]; then
     continue
   fi
