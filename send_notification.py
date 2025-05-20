@@ -31,9 +31,9 @@ try:
     #     server.quit()
     # print("Notification email sent successfully.")
     with smtplib.SMTP("regmail.brown.edu", 25) as server:
-        server.ehlo()
-        server.starttls(context=ssl.create_default_context())
-        server.login(SMTP_USER, SMTP_PASS)
+        logging.info(server.ehlo())
+        # server.starttls(context=ssl.create_default_context())
+        # server.login(SMTP_USER, SMTP_PASS)
         server.send_message(msg)
     logging.info("Email sent successfully.")
 except Exception as e:
