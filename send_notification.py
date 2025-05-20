@@ -8,7 +8,6 @@ logging.basicConfig(level=logging.INFO)
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
 SMTP_USER = "bnc-it@brown.edu"
-SMTP_PASS = "mirgi2-huJwor-tekboz"
 TO_EMAIL = "camilo_diaz@brown.edu"
 
 
