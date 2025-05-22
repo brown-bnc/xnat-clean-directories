@@ -6,8 +6,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 SMTP_USER = "bnc-it@brown.edu"
-#TO_EMAIL = "bnc-it@brown.edu"
-TO_EMAIL = "camilo_diaz@brown.edu"
+TO_EMAIL = "bnc-it@brown.edu"
 
 
 file_list = sys.argv[1:]
