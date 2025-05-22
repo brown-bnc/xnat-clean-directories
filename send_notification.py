@@ -16,7 +16,16 @@ if not file_list:
     logging.info("No files to report. Email not sent.")
     sys.exit(0)
 
-body = "The following files are older than 1 day:\n\n" + "\n".join(file_list)
+
+body = "The following directories contain files older than 1 day:\n\n"
+body += "Size\tPath\n"
+body += "----\t----\n"
+for line in file_list:
+    if ' ' in line:
+        size, path = line.split(' ', 1)
+        body += f"{size}\t{path.strip()}\n"
+    else:
+        body += f"{line}\n"
 
 
 msg = EmailMessage()
