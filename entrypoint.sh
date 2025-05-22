@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
 
-/find_older_files.sh
-/clean_main.sh
+/find_stale_prearchive.sh
+#/clean_main.sh
