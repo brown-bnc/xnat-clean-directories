@@ -1,12 +1,12 @@
 import sys
-import smtplib,ssl
+import smtplib
 from email.message import EmailMessage
 import logging
 
 logging.basicConfig(level=logging.INFO)
 
 SMTP_USER = "bnc-it@brown.edu"
-TO_EMAIL = "bnc-it@brown.edu"
+TO_EMAIL = ["bnc-it@brown.edu", "camilo_diaz@brown.edu"]
 
 
 file_list = sys.argv[1:]
@@ -30,7 +30,7 @@ for line in file_list:
 msg = EmailMessage()
 msg['Subject'] = 'File Cleanup Report'
 msg['From'] = SMTP_USER
-msg['To'] = TO_EMAIL
+msg['To'] =  ', '.join(TO_EMAIL)
 msg.set_content(body)
 
 try:
