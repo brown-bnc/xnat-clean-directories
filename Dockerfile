@@ -5,8 +5,10 @@ ENV DAYS_TO_CLEAN=100
 
 #install python
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
-    apt-get clean && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    python3 python3-pip \
+    apt-transport-https ca-certificates \
+    && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
