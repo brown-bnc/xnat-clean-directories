@@ -2,4 +2,4 @@
 set -e
 
 /find_stale_prearchive.sh
-#/clean_main.sh
+/clean_main.sh
