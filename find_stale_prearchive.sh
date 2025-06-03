@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 FOLDER="$PARENT_PATH/prearchive"
 
 # files older than 1 day

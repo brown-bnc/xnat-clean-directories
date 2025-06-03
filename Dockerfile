@@ -3,6 +3,7 @@ FROM python:3.13-alpine
 ENV PARENT_PATH=/data/xnat
 ENV DAYS_TO_CLEAN=100
 
+RUN apk add --no-cache bash
 
 COPY entrypoint.sh /entrypoint.sh
 

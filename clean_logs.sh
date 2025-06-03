@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # List of directories to clean (relative to $PARENT_PATH)
 DIRS_TO_CLEAN=(

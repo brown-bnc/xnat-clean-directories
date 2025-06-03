@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 usage=$(df --output=pcent $PARENT_PATH/cache/ | awk 'NR==2 {gsub("%",""); print $1}') # Get the usage of the cache folder
 
