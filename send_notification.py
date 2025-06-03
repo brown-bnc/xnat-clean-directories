@@ -11,9 +11,9 @@ TO_EMAIL = "camilo_diaz@brown.edu"
 
 file_list = sys.argv[1:]
 
-if not file_list:
-    logging.info("No files to report. Email not sent.")
-    sys.exit(0)
+# if not file_list:
+#     logging.info("No files to report. Email not sent.")
+#     sys.exit(0)
 
 
 body = "The following directories contain files older than 1 day:\n\n"
