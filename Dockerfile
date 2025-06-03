@@ -3,11 +3,6 @@ FROM python:3.13-alpine
 ENV PARENT_PATH=/data/xnat
 ENV DAYS_TO_CLEAN=100
 
-#install python
-# RUN apt-get update && \
-#     apt-get install -y python3 python3-pip && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* || (cat /var/log/apt/term.log || true; exit 1)
 
 COPY entrypoint.sh /entrypoint.sh
 
