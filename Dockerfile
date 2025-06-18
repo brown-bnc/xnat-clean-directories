@@ -1,13 +1,9 @@
 ARG UBUNTU_VERSION=22.04
-FROM ubuntu:$UBUNTU_VERSION
+FROM python:3.13-alpine
 ENV PARENT_PATH=/data/xnat
 ENV DAYS_TO_CLEAN=100
 
-#install python
-RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache bash
 
 COPY entrypoint.sh /entrypoint.sh
 
