@@ -11,10 +11,6 @@ TO_EMAIL = ["bnc-it@brown.edu", "camilo_diaz@brown.edu"]
 
 file_list = sys.argv[1:]
 
-if not file_list:
-    logging.info("No files to report. Email not sent.")
-    sys.exit(0)
-
 
 body = "The following directories contain files older than 1 day:\n\n"
 body += "Size\tPath\n"
@@ -26,12 +22,16 @@ for line in file_list:
     else:
         body += f"{line}\n"
 
+subject = "File Cleanup Report"
+if len(file_list):
+    subject = "[IMPORTANT] "+subject
+else:
+    subject = "HEALTHY  "+subject
 
 msg = EmailMessage()
-msg['Subject'] = 'File Cleanup Report'
+msg['Subject'] = subject
 msg['From'] = SMTP_USER
 msg['To'] =  ', '.join(TO_EMAIL)
-#msg['To'] =  TO_EMAIL
 msg.set_content(body)
 
 try:
