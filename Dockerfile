@@ -10,8 +10,6 @@ COPY entrypoint.sh /entrypoint.sh
 COPY cleanup_cache.sh /cleanup_cache.sh
 COPY clean_logs.sh /clean_logs.sh
 COPY clean_main.sh /clean_main.sh
-COPY send_notification.py /send_notification.py
-COPY find_stale_prearchive.sh /find_stale_prearchive.sh
 
 RUN chmod +x /cleanup_cache.sh
 RUN chmod +x /clean_logs.sh
