@@ -15,7 +15,6 @@ RUN chmod +x /cleanup_cache.sh
 RUN chmod +x /clean_logs.sh
 RUN chmod +x /clean_main.sh
 RUN chmod +x /entrypoint.sh
-RUN chmod +x /find_stale_prearchive.sh 
 
 CMD ["/entrypoint.sh"]  
 
